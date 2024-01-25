@@ -1,0 +1,180 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#landingPageContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+    position: relative;
+    color: var(--color-black);
+    overflow: hidden;
+    
+
+
+}
+
+#landingPageContent{
+
+    width: 50%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+}
+
+#topShelfKnives{
+    width: 300px;
+    display: flex;
+
+    position: absolute;
+    top: -10%;
+    right: 0;
+
+
+}
+#sauceBottles{
+    width: 200px;
+    
+    position: absolute;
+    bottom: -2%;
+    left: -2%;
+}
+
+
+
+#gloveIcon{
+
+    width: 50%;
+    position: absolute;
+    bottom: -30%;
+    right: -15%;
+}
+
+#welcomeText{
+    /* padding-left: 2rem; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 4rem;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.holo:hover{
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+
+}
+
+#guest{
+    cursor: pointer;
+}
+
+
+
+
+#nameInputContainer{
+    display: inline-block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    
+    
+}
+
+#nameInput{
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 4rem;
+}
+
+input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+}
+/* Remove the blue outline on focus for all input elements */
+input:focus {
+    outline: none;
+  }
+  
+  /* If you want to remove the outline for specific input elements with a class */
+  .your-input-class:focus {
+    outline: none;
+  }
+
+#loginBtn{
+    width: 60px;
+    height: 40px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    cursor: pointer;
+    font: var(--font-styl1);
+}
+
+
+@media screen and (max-width: 768px) {
+    #welcomeText{
+        font-size: 2.5rem;
+    }
+
+    #bowlIcon{
+        width: 100px;
+    }
+
+    #sauceBottles{
+        width: 100px;
+    }
+
+    #topShelfKnives{
+        width: 200px;
+    }
+
+    input{
+        font: 1rem;
+    }
+
+    #gloveIcon{
+        width: 400px;
+        right: -40%;
+        
+            
+    }
+
+    input::placeholder{
+        font-size: 1rem;
+    }
+    #landingPageContent{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #buttonBase{
+        width: 80%;
+        flex-direction: column;
+    }
+}

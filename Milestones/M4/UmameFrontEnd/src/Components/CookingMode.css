@@ -1,0 +1,65 @@
+.cookingModeContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 100;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.recipeHeader, .ingredientsSection, .instructionsSection {
+    margin-bottom: 20px;
+}
+
+.ingredientsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+
+
+.instructionText {
+    margin: 10px 0;
+}
+
+.navigationButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.timerSection {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.compactIngredientsSection {
+    margin-bottom: 20px;
+}
+
+.compactIngredientsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ingredientItem {
+    background-color: #f3f3f3;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}

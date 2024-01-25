@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Components/RecipeCard.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#CookingMode">CookingMode</a></li><li><a href="global.html#LandingPage">LandingPage</a></li><li><a href="global.html#Main">Main</a></li><li><a href="global.html#Mixer">Mixer</a></li><li><a href="global.html#Navigation">Navigation</a></li><li><a href="global.html#RecipeCard">RecipeCard</a></li><li><a href="global.html#Search">Search</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Components/RecipeCard.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useState} from 'react';
+import './recipecard.css';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CommentIcon from '@mui/icons-material/Comment';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import KitchenIcon from '@mui/icons-material/Kitchen';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import {Typography} from '@mui/material';
+import IngredientsGrid from './IngredientsGrid';
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import PhotoIcon from '@mui/icons-material/Photo';
+import CookingMode from './CookingMode'; // Import CookingMode component
+
+/**
+ * RecipeCard component displays individual recipe information.
+ * It shows the recipe's image, ingredients, and interactive elements like liking, commenting, and bookmarking.
+ * The card can be flipped to show the ingredients list and toggled to enter a cooking mode.
+ *
+ * @component
+ * @param {Object} props
+ * @param {Object} props.recipe - The recipe data to display.
+ * @param {string} props.profile - Indicates if the profile section should be displayed.
+ */
+
+const RecipeCard = ({recipe, profile}) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [isCookingMode, setIsCookingMode] = useState(false); // State to manage Cooking Mode
+
+  const {
+    name,
+    recipeOwnerName,
+    image,
+    ingredients,
+    hearts,
+    comment,
+    additionalComment,
+  } = recipe;
+
+
+  /**
+     * Toggles the card's flipped state to show or hide the ingredients.
+     */
+
+  const flip = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  /**
+     * Toggles the cooking mode view of the recipe.
+     */
+
+  const toggleCookingMode = () => {
+    setIsCookingMode(!isCookingMode);
+  };
+
+  // Placeholder or default image URL
+  const defaultImage = 'https://via.placeholder.com/200'; // Replace with your own default image URL
+
+  return (
+    &lt;>
+      {isCookingMode &amp;&amp; &lt;CookingMode recipe={recipe} onClose={toggleCookingMode} />}
+      &lt;Card id="recipeCardContainer">
+        &lt;div id="recipeCardLeft" style={{display: profile === 'no' ? 'none' : 'flex'}}>
+          &lt;Avatar>{recipeOwnerName.charAt(0)}&lt;/Avatar>
+        &lt;/div>
+        &lt;CardContent id="recipeCardRight">
+          &lt;div id="flipBox" className={`flipBox ${isFlipped ? 'flipped' : ''}`}>
+            &lt;CardMedia
+              component="img"
+              height="200"
+              image={image || defaultImage} // Use default image if `image` is not available
+              alt={name}
+              className="front"
+            />
+            &lt;IconButton onClick={flip} className="flipButtonFront">
+              &lt;LocalDiningIcon />
+            &lt;/IconButton>
+            &lt;div className="back">
+              &lt;IngredientsGrid ingredients={ingredients} />
+              &lt;IconButton onClick={flip} className="flipButtonBack">
+                &lt;PhotoIcon />
+              &lt;/IconButton>
+            &lt;/div>
+          &lt;/div>
+          &lt;div id="postBar">
+            &lt;IconButton>
+              &lt;FavoriteIcon />
+            &lt;/IconButton>
+            &lt;IconButton>
+              &lt;CommentIcon />
+            &lt;/IconButton>
+            &lt;IconButton>
+              &lt;BookmarkIcon />
+            &lt;/IconButton>
+            &lt;IconButton onClick={toggleCookingMode}>
+              &lt;KitchenIcon />
+            &lt;/IconButton>
+          &lt;/div>
+          &lt;Typography id="postContent" variant="body1">{additionalComment}&lt;/Typography>
+        &lt;/CardContent>
+      &lt;/Card>
+    &lt;/>
+  );
+};
+
+export default RecipeCard;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Tue Nov 28 2023 23:33:27 GMT-0800 (Pacific Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

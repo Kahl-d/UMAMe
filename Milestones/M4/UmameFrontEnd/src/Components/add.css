@@ -1,0 +1,24 @@
+#addContainer{
+    z-index: 1;
+    max-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+#addPaper{
+    height: 70%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+
+#photoContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}

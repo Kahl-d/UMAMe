@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Components/LandingPage.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#CookingMode">CookingMode</a></li><li><a href="global.html#LandingPage">LandingPage</a></li><li><a href="global.html#Main">Main</a></li><li><a href="global.html#Mixer">Mixer</a></li><li><a href="global.html#Navigation">Navigation</a></li><li><a href="global.html#RecipeCard">RecipeCard</a></li><li><a href="global.html#Search">Search</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Components/LandingPage.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useState} from 'react';
+import './landingpage.css';
+import {useNavigate} from 'react-router-dom';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import EmailIcon from '@mui/icons-material/Email';
+import LockIcon from '@mui/icons-material/Lock';
+import LoginIcon from '@mui/icons-material/Login';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+
+/**
+ * LandingPage component is the initial screen of the application where users can log in, sign up,
+ * or continue as a guest. It manages the display of login and signup forms and navigates to the main
+ * page upon successful login, signup or as a guest.
+ *
+ * @component
+ */
+
+const LandingPage = () => {
+  const navigate = useNavigate();
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
+
+  /**
+     * Navigates to the main application page as a guest.
+     */
+
+  const asGuest = () => {
+    navigate('/main');
+  };
+
+  /**
+     * Handles the login process.
+     * Implement your logic for logging in here.
+     *
+     * @param {Object} event - The event object from the form submission.
+     */
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    // Add your login logic here
+  };
+
+  /**
+     * Handles the signup process.
+     * Implement your logic for signing up here.
+     *
+     * @param {Object} event - The event object from the form submission.
+     */
+
+  const handleSignup = (event) => {
+    event.preventDefault();
+    // Add your signup logic here
+  };
+
+  const squareButtonStyle = {
+    minWidth: '150px',
+    minHeight: '150px',
+    margin: '10px',
+    borderRadius: '10px',
+    backgroundColor: '#f0f0f0', // Matte finish color
+    color: '#333', // Text color
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // subtle shadow for depth
+  };
+
+  return (
+    &lt;div id="landingPageContainer">
+      &lt;div id="welcomeText">
+        &lt;h1>Welcome&lt;/h1>
+      &lt;/div>
+      &lt;div id="landingPageContent">
+        {showLogin ? (
+                    &lt;form onSubmit={handleLogin}>
+                      &lt;TextField
+                        variant="outlined"
+                        placeholder="Email"
+                        fullWidth
+                        margin="normal"
+                        InputProps={{
+                          startAdornment: (
+                            &lt;InputAdornment position="start">
+                              &lt;EmailIcon />
+                            &lt;/InputAdornment>
+                          ),
+                        }}
+                      />
+                      &lt;TextField
+                        variant="outlined"
+                        placeholder="Password"
+                        type="password"
+                        fullWidth
+                        margin="normal"
+                        InputProps={{
+                          startAdornment: (
+                            &lt;InputAdornment position="start">
+                              &lt;LockIcon />
+                            &lt;/InputAdornment>
+                          ),
+                        }}
+                      />
+                      &lt;Button variant="contained" fullWidth type="submit">
+                            Login
+                      &lt;/Button>
+                    &lt;/form>
+                ) : showSignup ? (
+                    &lt;form onSubmit={handleSignup}>
+                      &lt;TextField
+                        variant="outlined"
+                        placeholder="Name"
+                        fullWidth
+                        margin="normal"
+                        InputProps={{
+                          startAdornment: (
+                            &lt;InputAdornment position="start">
+                              &lt;AccountCircle />
+                            &lt;/InputAdornment>
+                          ),
+                        }}
+                      />
+                      &lt;TextField
+                        variant="outlined"
+                        placeholder="Email"
+                        fullWidth
+                        margin="normal"
+                        InputProps={{
+                          startAdornment: (
+                            &lt;InputAdornment position="start">
+                              &lt;EmailIcon />
+                            &lt;/InputAdornment>
+                          ),
+                        }}
+                      />
+                      &lt;TextField
+                        variant="outlined"
+                        placeholder="Password"
+                        type="password"
+                        fullWidth
+                        margin="normal"
+                        InputProps={{
+                          startAdornment: (
+                            &lt;InputAdornment position="start">
+                              &lt;LockIcon />
+                            &lt;/InputAdornment>
+                          ),
+                        }}
+                      />
+                      &lt;Button variant="contained" fullWidth type="submit">
+                            Signup
+                      &lt;/Button>
+                    &lt;/form>
+                ) : (
+                    &lt;div id="buttonBase" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                      &lt;Button style={squareButtonStyle} onClick={() => setShowLogin(true)}>
+                        &lt;LoginIcon fontSize="large" />
+                        &lt;div>Login&lt;/div>
+                      &lt;/Button>
+                      &lt;Button style={squareButtonStyle} onClick={() => setShowSignup(true)}>
+                        &lt;AppRegistrationIcon fontSize="large" />
+                        &lt;div>Signup&lt;/div>
+                      &lt;/Button>
+                      &lt;Button style={squareButtonStyle} onClick={asGuest}>
+                        &lt;ExitToAppIcon fontSize="large" />
+                        &lt;div>Guest&lt;/div>
+                      &lt;/Button>
+                    &lt;/div>
+                )}
+      &lt;/div>
+    &lt;/div>
+  );
+};
+
+export default LandingPage;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Tue Nov 28 2023 23:33:27 GMT-0800 (Pacific Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

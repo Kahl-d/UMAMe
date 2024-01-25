@@ -1,0 +1,18 @@
+#inContainer {
+    padding: 10px;
+    background-color: #fff; /* Match the card's background */
+    border-radius: 8px;
+}
+
+.inItems {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.inItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}

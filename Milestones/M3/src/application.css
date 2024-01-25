@@ -1,0 +1,149 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    /* lazyload: true; */
+}
+
+:root{
+
+    --color-main: #f4a261;
+    --color-main-light: #fcbf49;
+    --color-black: #003049;
+    --color-white: #e7ecef;
+    --color-highlightDark : #d62828;
+    --color-darkwhite: #b4b7b9;
+}
+
+/* ------------ APP CSS ------------- */
+
+
+#name{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+}
+#appContainer{
+    /* background: url('./Resources/background.png') repeat; */
+    background-size: 12%;
+    
+    
+
+    display: flex;
+    width: 100dvw;
+    min-width: 100dvw;
+    max-width: 100dvw;
+    min-height: 100dvh;
+    flex-grow: 1;
+    max-height: 100dvh;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    align-items: center;
+}
+
+#topAppContainer{
+    position: absolute;
+    z-index: 10;
+    height: 6%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgb(231,236,239);
+    background: -moz-linear-gradient(0deg, rgba(231,236,239,0) 0%, rgba(231,236,239,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(231,236,239,0) 0%, rgba(231,236,239,1) 100%);
+    background: linear-gradient(0deg, rgba(231,236,239,0) 0%, rgba(231,236,239,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e7ecef",endColorstr="#e7ecef",GradientType=1);
+
+    
+
+}
+
+.topSections{
+font-size: 2rem;
+
+}
+
+#navContainer{
+    display: flex;
+    height: fit-content;
+    position: absolute;
+    width: 60%;
+    /* min-width: fit-content; */
+    top: 2%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    height: 6%;
+    z-index: 10;
+    
+}
+
+#mainContentContainer{
+    display: flex;
+    flex-grow: 1;
+    width: 100%;    
+    max-height: 90%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+
+
+
+
+
+
+/* ---------- END OF APP CSS ---------- */
+
+
+
+
+
+
+/* HOME CSS-------------------------- */
+
+#homeContainer {
+    
+    width: 100%;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust column width as needed */
+    gap: 20px; /* Adjust the gap between cards */
+    justify-content: center;
+    align-items: center;
+}
+
+    
+    
+
+
+
+@media screen and (max-width: 786px) {
+    #navContainer {
+        top:90%;
+        width: 80%;
+    }
+
+    /* #homeContainer{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    } */
+
+    
+}
+
+
+
+
+/* END OF HOME CSS-------------------------- */

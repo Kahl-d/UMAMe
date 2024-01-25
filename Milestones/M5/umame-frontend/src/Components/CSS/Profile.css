@@ -1,0 +1,67 @@
+/* Profile.css */
+.profileContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+  
+  .profileHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profileInfo {
+    margin-left: 20px;
+  }
+  
+  .recipeCollections {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+
+  /* Add this to your CSS file, or create a new one if needed */
+/* You can customize these styles based on your design */
+
+.Title {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.recipeCollections {
+  margin-top: 20px;
+}
+
+.AccordionSummary {
+  background-color: var(--color-yellow);
+}
+
+.AccordionDetails {
+  display: flex;
+  overflow-x: auto;
+}
+
+/* Style for Featured Recipes Container */
+.FeaturedRecipesContainer {
+  margin-top: 20px;
+}
+
+/* Style for each Featured Recipe Card */
+.FeaturedRecipeCard {
+  width: 150px;
+  margin: 8px;
+  display: inline-block;
+}
+
+.FeaturedRecipeCardContent {
+  text-align: center;
+}
+
+/* Adjust the styles as needed */
+
+  
